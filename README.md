@@ -8,3 +8,5 @@ The website loads 50 AirBNB listings which were read from a JSON file and displa
 The link for the website can be found below:
 https://epuer18.github.io/jsSelfAssesment/
 
+This project was implemented by using code from class which can be found here:
+https://github.com/john-guerra/Airbnb_Listings_demo_page
