@@ -21,15 +21,28 @@ function MainModule(listingsID = "#listings") {
     />
     <div class="card-body">
       <h2 class="card-title">${listing.name}</h2>
-      <div>${listing.price}</div>
+      <div class="row align-items-center">
+      <div class="col-3">${listing.price}</div>
+      <div class="col-5">${listing.host_name} </div>
+      <div class="col-4">
+      <img
+      src=${listing.host_thumbnail_url}
+      class="listing-host"
+      size=10%
+      alt="Host profile picture"
+    />
+
+      </div>
+      </div>
+      <h3>Description</h3>
       <p class="card-text">
         ${listing.description}
       </p>
-      <h3>Ammenities</h3>
+      <h3>Amenities</h3>
       <ul>
         ${listEntries}
       </ul>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="${listing.listing_url}" class="btn btn-primary">Air BnB Link</a>
     </div>
   </div>
   </div>
