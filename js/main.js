@@ -1,14 +1,21 @@
 function MainModule(listingsID = "#listings") {
   const me = {};
 
-
   const listingsElement = document.querySelector(listingsID);
 
   function getListingCode(listing) {
+
+    let amenities = JSON.parse(listing.amenities);
+    let listEntries = "";
+    
+    for (const ammenity of amenities){
+      listEntries += '<li> ' + ammenity + '</li>\n'
+    }
+
     return `<div class="col-4">
   <div class="listing card">
     <img
-      src="https://a0.muscache.com/pictures/b7c2a199-4c17-4ba6-b81d-751719d2dac6.jpg"
+      src=${listing.picture_url}
       class="card-img-top"
       alt="AirBNB Listing"
     />
@@ -16,9 +23,12 @@ function MainModule(listingsID = "#listings") {
       <h2 class="card-title">${listing.name}</h2>
       <div>${listing.price}</div>
       <p class="card-text">
-        Some quick example text to build on the card title and make up
-        the bulk of the card's content.
+        ${listing.description}
       </p>
+      <h3>Ammenities</h3>
+      <ul>
+        ${listEntries}
+      </ul>
       <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
   </div>
