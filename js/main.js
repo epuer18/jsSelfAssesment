@@ -13,7 +13,7 @@ function MainModule(listingsID = "#listings") {
     }
 
     return `<div class="col-4">
-  <div class="listing card">
+  <div class=" listing card">
     <img
       src=${listing.picture_url}
       class="card-img-top"
@@ -32,23 +32,12 @@ function MainModule(listingsID = "#listings") {
       <a href="#" class="btn btn-primary">Go somewhere</a>
     </div>
   </div>
-  <!-- /card -->
   </div>
-
   `;
   }
 
   function redraw(listings) {
     listingsElement.innerHTML = "";
-    // for (let i = 0; i < listings.length; i++) {
-    //   listingsElement.innerHTML += getListingCode(listings[i]);
-    // }
-
-    // for (let listing of listings) {
-    //   console.log("listing", listing );
-    //   listingsElement.innerHTML += getListingCode(listing);
-    // }
-
     listingsElement.innerHTML = listings.map(getListingCode).join("\n");
   }
 
